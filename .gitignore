@@ -1,3 +1,5 @@
 .idea
 out
 javaAdvanced2020.iml
+.gitignore
+.gitattributes
