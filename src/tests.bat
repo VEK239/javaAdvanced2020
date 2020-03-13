@@ -11,6 +11,6 @@ cd %home%
 javac -cp %src% -d %out% %src%\%packageDir%\*.java %src%\%kgeorgiy%\*.java
 
 cd %out%
-jar -c --file=%run%\implementor.jar --main-class=%package%.Implementor %packageDir%\*.class %kgeorgiy%\*.class
+java -cp . -p . -m info.kgeorgiy.java.advanced.implementor jar-interface ru.ifmo.rain.vlasova.implementor.Implementor abracabadra
 
 cd %home%

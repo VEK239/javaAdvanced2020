@@ -7,12 +7,12 @@ import java.nio.file.Path;
  */
 public interface Impler {
     /**
-     * Produces code implementing class or interface specified by provided <tt>token</tt>.
+     * Produces code implementing class or interface specified by provided <code>token</code>.
      * <p>
-     * Generated class classes name should be same as classes name of the type token with <tt>Impl</tt> suffix
+     * Generated class classes name should be same as classes name of the type token with <code>Impl</code> suffix
      * added. Generated source code should be placed in the correct subdirectory of the specified
-     * <tt>root</tt> directory and have correct file name. For example, the implementation of the
-     * interface {@link java.util.List} should go to <tt>$root/java/util/ListImpl.java</tt>
+     * <code>root</code> directory and have correct file name. For example, the implementation of the
+     * interface {@link java.util.List} should go to <code>$root/java/util/ListImpl.java</code>
      *
      *
      * @param token type token to create implementation for.

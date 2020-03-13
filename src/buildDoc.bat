@@ -8,9 +8,7 @@ SET out=%home%\%outDir%
 SET run=%home%\run\implementor
 
 cd %home%
-javac -cp %src% -d %out% %src%\%packageDir%\*.java %src%\%kgeorgiy%\*.java
+javadoc -d javadoc -link https://docs.oracle.com/en/java/javase/13/docs/api^
+ -cp %src% -private -author --source-path %src% %src%\%packageDir%\ComparedMethod.java ^
+ %src%\%packageDir%\Implementor.java %src%\%packageDir%\ImplementorCodeGenerator.java %src%\%kgeorgiy%\*.java
 
-cd %out%
-jar -c --file=%run%\implementor.jar --main-class=%package%.Implementor %packageDir%\*.class %kgeorgiy%\*.class
-
-cd %home%
