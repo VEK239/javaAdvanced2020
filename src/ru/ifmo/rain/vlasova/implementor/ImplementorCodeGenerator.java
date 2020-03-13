@@ -57,7 +57,8 @@ class ImplementorCodeGenerator {
 
     private static String generateClassOpeningLine(Class<?> token) {
         return concatenate(SPACE,
-                Modifier.toString(token.getModifiers() & ~Modifier.INTERFACE & ~Modifier.ABSTRACT),
+                Modifier.toString(token.getModifiers() & ~Modifier.INTERFACE & ~Modifier.ABSTRACT
+                        & ~Modifier.PROTECTED & ~Modifier.STATIC),
                 "class",
                 getClassName(token),
                 (token.isInterface() ? "implements" : "extends"),

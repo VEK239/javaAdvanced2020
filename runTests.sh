@@ -9,3 +9,7 @@ java -cp . -p . -m info.kgeorgiy.java.advanced.student StudentGroupQuery ru.ifmo
 java -cp . -p . -m info.kgeorgiy.java.advanced.student AdvancedStudentGroupQuery ru.ifmo.rain.vlasova.student.StudentDB
 
 java -cp . -p . -m info.kgeorgiy.java.advanced.implementor interface ru.ifmo.rain.vlasova.implementor.Implementor
+java -cp . -p . -m info.kgeorgiy.java.advanced.implementor class ru.ifmo.rain.vlasova.implementor.Implementor
+
+java -cp . -p . -m info.kgeorgiy.java.advanced.implementor jar-interface ru.ifmo.rain.vlasova.implementor.Implementor
+java -cp . -p . -m info.kgeorgiy.java.advanced.implementor jar-class ru.ifmo.rain.vlasova.implementor.Implementor
