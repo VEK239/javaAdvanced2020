@@ -13,3 +13,10 @@ java -cp . -p . -m info.kgeorgiy.java.advanced.implementor class ru.ifmo.rain.vl
 
 java -cp . -p . -m info.kgeorgiy.java.advanced.implementor jar-interface ru.ifmo.rain.vlasova.implementor.Implementor
 java -cp . -p . -m info.kgeorgiy.java.advanced.implementor jar-class ru.ifmo.rain.vlasova.implementor.Implementor
+
+java -cp . -p . -m info.kgeorgiy.java.advanced.concurrent scalar ru.ifmo.rain.vlasova.concurrent.IterativeParallelism
+java -cp . -p . -m info.kgeorgiy.java.advanced.concurrent list ru.ifmo.rain.vlasova.concurrent.IterativeParallelism
+
+java -cp . -p . -m info.kgeorgiy.java.advanced.mapper list ru.ifmo.rain.vlasova.concurrent.IterativeParallelism
+
+java -cp . -p . -m info.kgeorgiy.java.advanced.crawler easy ru.ifmo.rain.vlasova.crawler.WebCrawler
