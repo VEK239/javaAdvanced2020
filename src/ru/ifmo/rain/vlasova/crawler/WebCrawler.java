@@ -24,8 +24,8 @@ public class WebCrawler implements Crawler {
 
     @Override
     public void close() {
-        downloaderPool.shutdownNow();
-        extractorPool.shutdownNow();
+        downloaderPool.shutdown();
+        extractorPool.shutdown();
     }
 
     @Override

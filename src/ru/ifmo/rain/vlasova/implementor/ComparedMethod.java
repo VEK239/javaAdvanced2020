@@ -40,11 +40,8 @@ public class ComparedMethod {
      * @return the hash of the method
      */
     public int hashCode() {
-        int POW = 31;
-        int MOD = 1000000007;
-        int hash = (method.getName().hashCode() % MOD + method.getReturnType().hashCode() % MOD) % MOD;
-        hash = (hash + POW * Arrays.hashCode(method.getParameterTypes())) % MOD;
-        return hash;
+        return method.getName().hashCode() + method.getReturnType().hashCode()
+                + Arrays.hashCode(method.getParameterTypes());
     }
 
     /**

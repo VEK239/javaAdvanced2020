@@ -30,7 +30,9 @@ public class Implementor implements Impler, JarImpler {
     /**
      * Default constructor
      */
-    public Implementor() {}
+    public Implementor() {
+    }
+
     /**
      * Changes the given path into a correct one. Replacing . with correct separator, appends Impl.java.
      *
@@ -87,16 +89,11 @@ public class Implementor implements Impler, JarImpler {
      * @return the encoded string
      */
     private String encode(String s) {
-        StringBuilder sb = new StringBuilder();
-        char[] charArray = s.toCharArray();
-        for (char c : charArray) {
-            if (c < 128) {
-                sb.append(c);
-            } else {
-                sb.append("\\u").append(String.format("%04x", (int) c));
-            }
+        StringBuilder builder = new StringBuilder();
+        for (char c : s.toCharArray()) {
+            builder.append("\\u").append(String.format("%04x", (int) c));
         }
-        return sb.toString();
+        return builder.toString();
     }
 
     /**
@@ -173,7 +170,7 @@ public class Implementor implements Impler, JarImpler {
             throw new ImplerException("Cannot find classpath", e);
         }
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
-        String[] args = {"-encoding",  "UTF-8", "-cp",
+        String[] args = {"-encoding", "UTF-8", "-cp",
                 sourcePath.toString() + File.pathSeparator + tokenClassPath.toString(),
                 getFullPath(sourcePath, token).toString()};
         if (compiler == null || compiler.run(null, null, null, args) != 0) {
@@ -210,7 +207,6 @@ public class Implementor implements Impler, JarImpler {
      * Usage: ([-jar]) [ClassName] [Path]
      *
      * @param args arguments entered in command line
-     *
      * @see Implementor#implement(Class, Path)
      * @see Implementor#implementJar(Class, Path)
      */

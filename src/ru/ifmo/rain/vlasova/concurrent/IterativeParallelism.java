@@ -63,7 +63,6 @@ public class IterativeParallelism implements ListIP {
 
         List<R> result;
         if (mapper == null) {
-
             result = new ArrayList<>(Collections.nCopies(threadsCount, null));
             List<Thread> workers = new ArrayList<>();
 
