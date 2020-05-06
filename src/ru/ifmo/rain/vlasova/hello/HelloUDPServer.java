@@ -14,19 +14,20 @@ import java.util.concurrent.Executors;
 import static java.lang.Integer.max;
 
 public class HelloUDPServer implements HelloServer {
-    private ExecutorService senderThreads;
+    private ExecutorService senderThreads, listenerThread;
     private DatagramSocket socket;
 
     @Override
     public void start(int port, int threads) {
         senderThreads = Executors.newFixedThreadPool(max(1, threads));
+        listenerThread = Executors.newSingleThreadExecutor();
         try {
             socket = new DatagramSocket(port);
             socket.setSoTimeout(100);
         } catch (SocketException e) {
             System.err.println("Error opening socket");
         }
-        new Thread(this::listen).start();
+        listenerThread.submit(this::listen);
     }
 
     private void listen() {
@@ -48,6 +49,7 @@ public class HelloUDPServer implements HelloServer {
     @Override
     public void close() {
         socket.close();
+        listenerThread.shutdown();
         senderThreads.shutdown();
     }
 
