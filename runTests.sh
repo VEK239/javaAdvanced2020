@@ -20,3 +20,6 @@ java -cp . -p . -m info.kgeorgiy.java.advanced.concurrent list ru.ifmo.rain.vlas
 java -cp . -p . -m info.kgeorgiy.java.advanced.mapper list ru.ifmo.rain.vlasova.concurrent.IterativeParallelism
 
 java -cp . -p . -m info.kgeorgiy.java.advanced.crawler easy ru.ifmo.rain.vlasova.crawler.WebCrawler
+
+java -cp . -p . -m info.kgeorgiy.java.advanced.hello client ru.ifmo.rain.vlasova.hello.HelloUDPClient
+java -cp . -p . -m info.kgeorgiy.java.advanced.hello server ru.ifmo.rain.vlasova.hello.HelloUDPServer
